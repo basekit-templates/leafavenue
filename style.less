@@ -1,0 +1,124 @@
+// Mixins
+@accentcolour:		#4a979d;
+@sitetitlecolor:	#3e3e3e;
+@titlecolour:		#000000;
+@copycolour:		#6a6a6a;
+@smallcolour:		#9b9b9b;
+
+// Globals
+body {
+	background: url(assets/bg.jpg) center center;
+	padding: 2%;
+	font-family: 'Ubuntu', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-size: 14px;
+}
+.page {
+	background: #fff;
+	padding: 3%;
+	box-shadow: 10px 10px 3px fadeout(@copycolour, 50%);
+}
+.main {
+	padding: 4em 0;
+	float: left;
+	width: 104%;
+	margin-left: -2%;
+}
+.column {
+	width: 47%;
+	float: left;
+	margin-left: 2%;
+	box-sizing: border-box;
+	&:nth-of-type(1) {
+		padding-right: 2%;
+		border-right: 2px solid lighten(@smallcolour, 36%);;
+	}
+}
+.header, .nav {
+	text-align: center;
+	clear: both;
+}
+.header {
+	.aside, .centre {
+		float: left;
+		width: 33.3%;
+	}
+}
+.left {
+	text-align: left;
+}
+.right {
+	text-align: right;
+}
+h1, h2, h3, .nav {
+	font-family: 'Josefin Sans', sans-serif;
+}
+h1 {
+	font-size: 2.5em;
+	font-weight: bold;
+}
+h2 {
+	color: @smallcolour;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+h3 {
+	font-size: 1.4em;
+	margin-bottom: .5em;
+}
+h4 {
+	color: @accentcolour;
+	display: inline;
+	padding-right: 1em;
+}
+.header, .footer {
+	h2 {
+		position: relative;
+		display: inline;
+		&:before, &:after {
+			content: ".";
+			position: absolute;
+			bottom: 0;
+			left: -.2em;
+		}
+		&:after  {
+			right: -.2em;
+		}
+	}
+}
+p {
+	color: @copycolour;
+	line-height: 1.8em;
+	margin-top: .6em;
+}
+.nav {
+	padding: 1.7em 0;
+	border-top: 1px solid lighten(@smallcolour, 25%);
+	border-bottom: 1px solid lighten(@smallcolour, 25%);
+	a {
+		color: @sitetitlecolor;
+		text-decoration: none;
+		margin: 0 1.6em;
+		&:hover {
+			color: @accentcolour;
+		}
+	}
+	.active {
+		color: @accentcolour;
+	}
+}
+.footer {
+	border-top: 3px solid @accentcolour;
+	clear: both;
+	padding: 4em 0;
+}
+.article {
+	padding: 1% 3%;
+	small {
+		color: @smallcolour;
+	}
+	&.featured {
+		background: lighten(saturate(@accentcolour, 50%), 50%);
+	}
+}
