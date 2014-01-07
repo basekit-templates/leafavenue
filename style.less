@@ -4,10 +4,12 @@
 @titlecolour:		#000000;
 @copycolour:		#6a6a6a;
 @smallcolour:		#9b9b9b;
+@pagecolour:		#ffffff;
 
 // Globals
 body {
-	background: url(assets/bg.jpg) center center;
+	background: url(assets/bg.jpg) center top;
+	background-size: cover;
 	padding: 2%;
 	font-family: 'Ubuntu', sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -15,7 +17,9 @@ body {
 	font-size: 14px;
 }
 .page {
-	background: #fff;
+	max-width: 1200px;
+	margin: 0 auto;
+	background: @pagecolour;
 	padding: 3%;
 	box-shadow: 10px 10px 3px fadeout(@copycolour, 50%);
 }
@@ -80,10 +84,10 @@ h4 {
 			content: ".";
 			position: absolute;
 			bottom: 0;
-			left: -.2em;
+			left: -.5em;
 		}
 		&:after  {
-			right: -.2em;
+			right: -.5em;
 		}
 	}
 }
@@ -120,5 +124,61 @@ p {
 	}
 	&.featured {
 		background: lighten(saturate(@accentcolour, 50%), 50%);
+	}
+}
+.icon {
+	display: none;
+	padding: .5em;
+	color: @pagecolour;
+	background: url(assets/alt-icon.svg) no-repeat center center;
+}
+.alt {
+	.icon {
+		display: inline-block;
+	}
+}
+
+// Single column for mobile & tablet
+@media (max-width: 600px) {
+	.header {
+		.left {
+			display: none;
+		}
+		.right {
+			padding-bottom: 1em;
+		}
+		.centre, .aside {
+			width: 100%;
+			float: none;
+			text-align: center;
+		}
+	}
+	.nav {
+		text-align: left;
+		line-height: 1.6em;
+		padding: .8em 0;
+		a {
+			margin: 0 .5em;
+		}
+	}
+	.main {
+		padding: 0 0 1em;
+	}
+	.column, .column:nth-of-type(1) {
+		border-right: 0;
+		width: 100%;
+	}
+	.item {
+		width: 92%;
+	}
+	.footer {
+		.aside {
+			text-align: center;
+		}
+	}
+	h2 {
+		&:after {
+			text-align: right;
+		}
 	}
 }
