@@ -1,0 +1,44 @@
+{
+    "name":"Leaf Avenue",
+    "thumbnail":"leafavenue.png",
+    "screenshot":"leafavenue.png",
+    "tags": {
+    "en": ["minimal", "clean", "modern", "menu", "website", "creative", "elegant", "sans-serif"],
+    },
+    "colorSwatches":
+    {
+        "Swatch 1": {
+            "color1":"#4a979d", 
+            "color2":"#3e3e3e",
+            "color3":"#000000", 
+            "color4":"#6a6a6a",
+            "color5":"#9b9b9b", 
+            "color6":"#ffffff", 
+        },
+        "Swatch 2": {
+            "color1":"#695242", 
+            "color2":"#301f17",
+            "color3":"#39b691", 
+            "color4":"#ffffff",
+            "color5":"#ffffff", 
+            "color6":"#ffffff", 
+            "color7":"#fff200" 
+        }
+    },
+    "fontSwatch": {
+       "title": "Oswald",
+        "font1": {
+            "font-family": "Ubuntu",
+            "font-size": "14px",
+            "color": "@color-swatch1",
+        },
+        "font2": {
+            "font-family": "Oswald",
+            "font-size": "26px",
+            "font-weight": "500",
+            "line-height": "34px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+    }
+}
