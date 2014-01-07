@@ -1,0 +1,37 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<header class="header">
+	<aside class="aside left">
+		<h2>. 23RD AND 4TH SIMMION ST .</h2>
+	</aside>
+	<div class="centre">
+		<a href="#" title="Leaf Avenue">
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 27 34">
+				<image xlink:href="images/logo.svg" src="images/logo.jpg" width="27" height="34"></image>
+			</svg>
+		</a>
+		{{widget('companyname', 'companyname', {"business": "Leaf Avenue"})|raw}}
+	</div>			
+	<aside class="aside right">
+		<h2>. OPEN 11AM TIL LATE DAILY .</h2>
+	</aside>
+	
+</header>
+
+<nav class="nav">
+	{{widget('extendednavigation', 'topnavigation', {})|raw}}
+</nav>
+
+<section class="section main">
+	{{widget('menu', 'menu1', {})|raw}}
+</section>
+
+<footer class="footer">
+	<aside class="aside left">
+		{{widget('content', 'footercolumn1content', {"content":"<p>Lorem Ipsum Dolor</p>"})|raw}}
+	</aside>
+</footer>
+
+{% endblock %}
