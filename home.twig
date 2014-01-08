@@ -25,7 +25,12 @@
 </nav>
 
 <section class="section main">
-	{{widget('menu', 'menu1', {})|raw}}
+	<div class="column">
+		{{widget('main', 'column1', {})|raw}}
+	</div>
+	<div class="column">
+		{{widget('main', 'column2', {})|raw}}
+	</div>
 </section>
 
 <footer class="footer">
