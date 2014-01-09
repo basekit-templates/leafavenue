@@ -17,18 +17,28 @@ body {
 .main {
   padding: 4em 0;
   float: left;
-  width: 104%;
-  margin-left: -2%;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 4em;
+  -webkit-column-rule-color: #f7f7f7;
+  -webkit-column-rule-style: solid;
+  -webkit-column-rule-width: 2px;
+  -moz-column-count: 2;
+  -moz-column-gap: 4em;
+  -moz-column-rule-color: #f7f7f7;
+  -moz-column-rule-style: solid;
+  -moz-column-rule-width: 2px;
+  column-count: 2;
+  column-gap: 4em;
+  column-rule-color: #f7f7f7;
+  column-rule-style: solid;
+  column-rule-width: 2px;
 }
-.column {
-  width: 47%;
-  float: left;
-  margin-left: 2%;
-  box-sizing: border-box;
-}
-.column:nth-of-type(1) {
-  padding-right: 2%;
-  border-right: 2px solid #f7f7f7;
+.main > * {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  -ms-column-break-inside: avoid;
+  -o-column-break-inside: avoid;
 }
 .header,
 .nav {
@@ -192,14 +202,9 @@ a:hover {
   }
   .main {
     padding: 0 0 1em;
-  }
-  .column,
-  .column:nth-of-type(1) {
-    border-right: 0;
-    width: 100%;
-  }
-  .item {
-    width: 92%;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
   }
   .footer .aside {
     text-align: center;
