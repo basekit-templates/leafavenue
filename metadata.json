@@ -1,44 +1,146 @@
 {
-    "name":"Leaf Avenue",
-    "thumbnail":"leafavenue.png",
-    "screenshot":"leafavenue.png",
+	"name":"Leaf Avenue",
+	"thumbnail":"leafavenue.png",
+	"screenshot":"leafavenue.png",
     "tags": {
-    "en": ["minimal", "clean", "modern", "menu", "website", "creative", "elegant", "sans-serif"],
+    "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "media", "sans-serif"],
+    "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion", "sans-serif"],
+    "br": ["minimalista", "limpo", "fotografia", "vintage", "moderno", "escuro", "estúdio", "website", "criativo", "elegante", "profissional", "único", "mídia", "sans-serif"]
     },
     "colorSwatches":
     {
         "Swatch 1": {
-            "color1":"#4a979d", 
-            "color2":"#3e3e3e",
-            "color3":"#000000", 
-            "color4":"#6a6a6a",
-            "color5":"#9b9b9b", 
-            "color6":"#ffffff", 
+            "color1":"#f7f4e1",
+            "color2":"#f7f4e1",
+            "color3":"#841c2f",
+            "color4":"#3c4a55",
+            "color5":"#3c4a55",
+            "color6":"#9bd6cf",
+            "color7":"#ffffff"
         },
         "Swatch 2": {
-            "color1":"#695242", 
-            "color2":"#301f17",
-            "color3":"#39b691", 
-            "color4":"#ffffff",
-            "color5":"#ffffff", 
-            "color6":"#ffffff", 
-            "color7":"#fff200" 
+            "color1":"#ffffff",
+            "color2":"#72d0eb",
+            "color3":"#09d4b5",
+            "color4":"#2f353e",
+            "color5":"#b4bec7",
+            "color6":"#434f5b",
+            "color7":"#ffffff"
+        },
+        "Swatch 3": {
+            "color1":"#ffffff",
+            "color2":"#72d0eb",
+            "color3":"#f3a41c",
+            "color4":"#2f353e",
+            "color5":"#b4bec7",
+            "color6":"#434f5b",
+            "color7":"#ffffff"
+        },
+        "Swatch 4": {
+            "color1":"#ffffff",
+            "color2":"#72d0eb",
+            "color3":"#3b3b3b",
+            "color4":"#2f353e",
+            "color5":"#b4bec7",
+            "color6":"#434f5b",
+            "color7":"#ffffff"
+        },
+        "Swatch 5": {
+            "color1":"#ffffff",
+            "color2":"#72d0eb",
+            "color3":"#9553d9",
+            "color4":"#2f353e",
+            "color5":"#b4bec7",
+            "color6":"#434f5b",
+            "color7":"#ffffff"
         }
     },
     "fontSwatch": {
-       "title": "Oswald",
+       "title": "\"Futura\", \"Helvetica\", sans-serif",
         "font1": {
-            "font-family": "Ubuntu",
-            "font-size": "14px",
-            "color": "@color-swatch1",
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "24px",
+            "font-weight": "400",
+            "line-height": "34px",
+            "color": "@color-swatch6",
+            "letter-spacing": "inherit"
         },
         "font2": {
-            "font-family": "Oswald",
-            "font-size": "26px",
-            "font-weight": "500",
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "24px",
+            "font-weight": "400",
             "line-height": "34px",
+            "color": "@color-swatch3",
+            "letter-spacing": "inherit"
+        },
+        "font3": {
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "28px",
+            "color": "@color-swatch3",
+            "letter-spacing": "inherit"
+        },
+        "font4": {
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "14px",
+            "font-weight": "400",
+            "line-height": "24px",
+            "color": "@color-swatch3",
+            "letter-spacing": "inherit"
+        },
+        "font5": {
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "14px",
+            "font-weight": "400",
+            "line-height": "24px",
             "color": "@color-swatch5",
             "letter-spacing": "inherit"
         },
+        "font6": {
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "16px",
+            "font-weight": "400",
+            "line-height": "26px",
+            "color": "@color-swatch5",
+            "color-hover": "@color-swatch5",
+            "letter-spacing": "inherit",
+            "background-color": "transparent",
+            "background-color-hover": "transparent"
+        },
+        "font7": {
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "28px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit",
+            "background-color": "transparent",
+            "background-color-hover": "darken(@color-swatch1,5%)"
+        },
+        "font8": {
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "28px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font9": {
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "28px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font10": {
+            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
+            "font-size": "24px",
+            "font-weight": "400",
+            "line-height": "34px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        }
     }
 }
