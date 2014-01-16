@@ -11,43 +11,48 @@
     {
         "Swatch 1": {
             "color1":"#4a979d",
-            "color2":"#3e3e3e",
-            "color3":"#000000",
+            "color2":"#eafffc",
+            "color3":"#3e3e3e",
             "color4":"#6a6a6a",
-            "color5":"#9b9b9b",
-            "color6":"#ffffff"
+            "color5":"#bdbdbd",
+            "color6":"#ffffff",
+            "color7":"#f4f4f4"
         },
         "Swatch 2": {
-            "color1":"#ffffff",
-            "color2":"#72d0eb",
-            "color3":"#09d4b5",
-            "color4":"#2f353e",
-            "color5":"#b4bec7",
-            "color6":"#434f5b"
+            "color1":"#AC7A78",
+            "color2":"#ffd4d2",
+            "color3":"#3e3e3e",
+            "color4":"#6a6a6a",
+            "color5":"#bdbdbd",
+            "color6":"#ffffff",
+            "color7":"#f4f4f4"
         },
         "Swatch 3": {
-            "color1":"#ffffff",
-            "color2":"#72d0eb",
-            "color3":"#f3a41c",
-            "color4":"#2f353e",
-            "color5":"#b4bec7",
-            "color6":"#434f5b"
+            "color1":"#A7C3E9",
+            "color2":"#e7f4ff",
+            "color3":"#3e3e3e",
+            "color4":"#6a6a6a",
+            "color5":"#bdbdbd",
+            "color6":"#ffffff",
+            "color7":"#f4f4f4"
         },
         "Swatch 4": {
-            "color1":"#ffffff",
-            "color2":"#72d0eb",
-            "color3":"#3b3b3b",
-            "color4":"#2f353e",
-            "color5":"#b4bec7",
-            "color6":"#434f5b"
+            "color1":"#934FD3",
+            "color2":"#f7d6ff",
+            "color3":"#3e3e3e",
+            "color4":"#6a6a6a",
+            "color5":"#bdbdbd",
+            "color6":"#ffffff",
+            "color7":"#f4f4f4"
         },
         "Swatch 5": {
-            "color1":"#ffffff",
-            "color2":"#72d0eb",
-            "color3":"#9553d9",
-            "color4":"#2f353e",
-            "color5":"#b4bec7",
-            "color6":"#434f5b"
+            "color1":"#A71A18",
+            "color2":"#ffc59f",
+            "color3":"#3e3e3e",
+            "color4":"#6a6a6a",
+            "color5":"#bdbdbd",
+            "color6":"#ffffff",
+            "color7":"#f4f4f4"
         }
     },
     "fontSwatch": {

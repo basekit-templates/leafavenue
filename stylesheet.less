@@ -8,12 +8,29 @@
 	===============================
 */
 
+/*
+	Colour Swatches:
+	===============================
+	@color-swatch1: Accent colour
+	@color-swatch2: Light accent colour
+	@color-swatch3: Title colour
+	@color-swatch4: Body copy colour
+	@color-swatch5: Border colour
+	@color-swatch6: Page background colour
+	@color-swatch7: Button colour
+	===============================
+*/
+
+.about, .contact, .gallery {
+	@import "@{templateCommon}/basekit-bootstrap.less";
+}
+
 /*	===============================
 	Globals
 	=============================== */
 body {
 	background: @color-swatch1 url("templates/leafavenue/images/bg.png") center top;
-	background-size: cover contain;
+	background-size: 100% auto;
 	padding: 2%;
 	font-family: 'Ubuntu', sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -28,6 +45,7 @@ body {
 	box-shadow: 10px 10px 3px fadeout(@color-swatch4, 50%);
 }
 .main {
+	padding: 2em 0;
 	.menu-items {
 		list-style: none;
 		padding: 0 0 4em;
@@ -36,19 +54,19 @@ body {
 		
 		-webkit-column-count: 2;
 		-webkit-column-gap: 4em;	
-		-webkit-column-rule-color: lighten(@color-swatch5, 36%);
+		-webkit-column-rule-color: lighten(@color-swatch5, 20%);
 		-webkit-column-rule-style: solid;
 		-webkit-column-rule-width: 2px;
 		
 		-moz-column-count: 2;
 		-moz-column-gap: 4em;	
-		-moz-column-rule-color: lighten(@color-swatch5, 36%);
+		-moz-column-rule-color: lighten(@color-swatch5, 20%);
 		-moz-column-rule-style: solid;
 		-moz-column-rule-width: 2px;
 		
 		column-count: 2;
 		column-gap: 4em;	
-		column-rule-color: lighten(@color-swatch5, 36%);
+		column-rule-color: lighten(@color-swatch5, 20%);
 		column-rule-style: solid;
 		column-rule-width: 2px;
 		> * {
@@ -66,7 +84,7 @@ body {
 	.menu-section-header {
 		list-style: none;
 		clear: both;
-		background: fadeout(@color-swatch1, 70%);
+		background:  @color-swatch2;
 		padding: 1em;
 		margin-bottom: 1em;
 	}
@@ -74,7 +92,7 @@ body {
 		float: right;
 		margin-left: 1em;
 		padding: 2px;
-		border: 1px solid lighten(@color-swatch5, 25%);
+		border: 1px solid  @color-swatch5;
 	}
 }
 
@@ -84,18 +102,31 @@ body {
 	box-sizing: border-box;
 }
 .header, .nav {
+	background: @color-swatch6;
 	text-align: center;
 	clear: both;
 }
 .header {
+	float: left;
+	width: 100%;
+	padding-bottom: 2em;
 	.aside, .centre {
 		float: left;
 		width: 33.3%;
+		a {
+			border: 0;
+		}
+	}
+}
+.header, .footer {
+	h2, .content {
+		padding-top: 2.3em;
+		color: @color-swatch5;
 	}
 }
 .centre {
 	a {
-		color: @color-swatch2;
+		color: @color-swatch3;
 	}
 	svg {
 		width: 27px;
@@ -119,8 +150,8 @@ body {
 	small {
 		color: @color-swatch5;
 	}
-	&.featured {
-		background: fadeout(@color-swatch1, 80%);
+	&.featured, &.menu-item-promoted {
+		background:  @color-swatch2;
 	}
 }
 
@@ -135,7 +166,7 @@ h1 {
 	font-weight: bold;
 }
 h2 {
-	color: @color-swatch5;
+	color: @color-swatch3;
 	font-size: 1.2em;
 	font-weight: 700;
 }
@@ -149,7 +180,8 @@ h4, .menu-item-price p {
 	padding-right: 1em;
 	font-weight: bold;
 }
-p {
+p, .about p, .contact p, .gallery p, .about .p-font, .contact .p-font, .gallery .p-font {
+	font-family: 'Ubuntu', sans-serif;
 	color: @color-swatch4;
 	line-height: 1.8em;
 	margin-top: .6em;
@@ -185,14 +217,14 @@ a {
 }
 .nav {
 	padding: 1.7em 0;
-	border-top: 1px solid lighten(@color-swatch5, 25%);
-	border-bottom: 1px solid lighten(@color-swatch5, 25%);
+	border-top: 1px solid  @color-swatch5;
+	border-bottom: 1px solid  @color-swatch5;
 	a {
-		color: @color-swatch2;
+		color: @color-swatch3;
 		text-decoration: none;
 		margin: 0 1.6em;
 		&:hover {
-			color: @color-swatch1;
+			color: @color-swatch3;
 		}
 	}
 	ul {
@@ -245,7 +277,7 @@ a {
 		z-index: -1;
 		color: @color-swatch1;
 		position: absolute;
-		content: "❁";
+		content: "&#149;";
 		top: -.2em;
 		left: 0;
 		font-size: 2em;
@@ -256,166 +288,35 @@ a {
 		display: inline-block;
 	}
 }
-.gallery-widget {
-	padding: 0;
-	margin-left: -1em;
-	list-style: none;
-	.square {
-		margin-left: 1em;
-		margin-bottom: 1em;
-		float: left;
+.about, .contact, .gallery {
+	.widget.twitter ul li time {
+		color: @color-swatch5;
 	}
-	a {
-		border: 0;
+	.widget.twitter ul li span a, .widget.twitter ul li span a:hover {
+		text-decoration: none;	
+		color: lighten(@color-swatch3, 50%);
 	}
-	a img {
-		border: 1px solid lighten(@color-swatch5, 25%);
-		padding: 2px;
+	.widget.button button.btn, .widget.contactform form fieldset button.btn, .widget.paypalbuynow .widget.button.paypal, .widget.dropbox button, .widget.tweet a, .widget.signupform fieldset button {
+		background: @color-swatch1;
+		color: @color-swatch6;
+		padding: .5em .8em;
+	}
+	.widget.contactform form fieldset input, .widget.contactform form fieldset textarea, .widget.signupform fieldset input {
+		color: @color-swatch4;
+	}
+	.widget.dropbox .file-name {
+		color: @color-swatch4;
+	}
+	.widget.socialicons span a {
+		background-repeat: no-repeat !important;
+		background-position: center center !important;
+		background: @color-swatch1;
+		height: 40px;
+		width: 40px;
+		border-radius: 100%;
+		padding: 0;
 	}
 }
-.widget {
-	clear: both;
-}
-/*	===============================
-	Forms
-	=============================== */
-input:not([type]),
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-select,
-textarea {
-    padding: 0.5em 0.6em;
-    display: inline-block;
-    border: 1px solid #ccc;
-    font-size: 0.8em;
-    box-shadow: inset 0 1px 3px lighten(@color-swatch5, 25%);
-    border-radius: 4px;
-    -webkit-transition: 0.3s linear border;
-    -moz-transition: 0.3s linear border;
-    -ms-transition: 0.3s linear border;
-    -o-transition: 0.3s linear border;
-    transition: 0.3s linear border;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-input:not([type]):focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-select:focus,
-textarea:focus {
-    outline: 0;
-    outline: thin dotted \9; /* IE6-9 */
-    border-color: @color-swatch5;
-}
-
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-    outline: thin dotted @color-swatch5;
-    outline: 1px auto @color-swatch5;
-}
-.checkbox,
-.radio {
-    margin: 0.5em 0;
-    display: block;
-}
-input:not([type])[disabled],
-input[type="text"][disabled],
-input[type="password"][disabled],
-input[type="email"][disabled],
-input[type="url"][disabled],
-input[type="date"][disabled],
-input[type="month"][disabled],
-input[type="time"][disabled],
-input[type="datetime"][disabled],
-input[type="datetime-local"][disabled],
-input[type="week"][disabled],
-input[type="number"][disabled],
-input[type="search"][disabled],
-input[type="tel"][disabled],
-input[type="color"][disabled],
-select[disabled],
-textarea[disabled] {
-    cursor: not-allowed;
-    background-color: @color-swatch5;
-    color: #cad2d3;
-}
-input[readonly],
-select[readonly],
-textarea[readonly] {
-    background: @color-swatch5; /* menu hover bg color */
-    color: @color-swatch1; /* menu text color */
-    border-color: @color-swatch5;
-}
-
-input:focus:invalid,
-textarea:focus:invalid,
-select:focus:invalid {
-    color: @color-swatch1;
-    border: 1px solid @color-swatch5;
-}
-input:focus:invalid:focus,
-textarea:focus:invalid:focus,
-select:focus:invalid:focus {
-    border-color: @color-swatch5;
-}
-input[type="file"]:focus:invalid:focus,
-input[type="radio"]:focus:invalid:focus,
-input[type="checkbox"]:focus:invalid:focus {
-    outline-color: @color-swatch5;
-}
-select {
-    border: 1px solid @color-swatch5;
-    background-color: white;
-}
-select[multiple] {
-    height: auto;
-}
-label {
-    margin: 0.5em 0 0.2em;
-    font-size: 90%;
-}
-fieldset {
-    margin: 0;
-    padding: 0.35em 0 0.75em;
-    border: 0;
-}
-legend {
-    display: block;
-    width: 100%;
-    padding: 0.3em 0;
-    margin-bottom: 0.3em;
-    font-size: 125%;
-    color: #333;
-    border-bottom: 1px solid @color-swatch5;
-}
-
 
 /*	===============================
 	Media queries
