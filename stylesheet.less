@@ -21,6 +21,9 @@
 	===============================
 */
 
+/*	===============================
+	Style import
+	=============================== */
 .about, .contact, .gallery {
 	@import "@{templateCommon}/basekit-bootstrap.less";
 }
@@ -93,6 +96,7 @@ body {
 		margin-left: 1em;
 		padding: 2px;
 		border: 1px solid  @color-swatch5;
+		background: @color-swatch6;
 	}
 }
 
@@ -192,6 +196,7 @@ a {
 	transition: .2s;
 	padding-bottom: .3em;
 	border-bottom: 1px solid transparent;
+	text-decoration: none !important;
 	&:hover {
 		padding-bottom: 0;
 		border-color: @color-swatch1;
@@ -362,5 +367,10 @@ a {
 		.aside {
 			text-align: center;
 		}
+	}
+}
+@media (max-width: 500px) {
+	.main .menu-item img {
+		width: 100%;
 	}
 }
