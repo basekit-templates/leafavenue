@@ -28,6 +28,11 @@
 	@import "@{templateCommon}/basekit-bootstrap.less";
 }
 
+	body * {
+		-webkit-backface-visibility: hidden;
+	}
+
+
 /*	===============================
 	Globals
 	=============================== */
@@ -232,6 +237,9 @@ a {
 			color: @color-swatch3;
 		}
 	}
+	.menu-pull {
+		display: none;
+	}
 	ul {
 		padding: 0;
 		margin: 0;
@@ -324,6 +332,95 @@ a {
 }
 
 /*	===============================
+	Blog styles
+	=============================== */
+.blogpost, .bloglistposts {
+	h2 {
+		font-size: 2.5em;
+		padding-bottom: .6em;
+		a {
+			font-size: inherit;
+		}
+	}
+	p {
+		color: @color-swatch4;
+		font-size: 1.1em;
+	}
+	img {
+		float: right;
+		padding-left: 2em;
+	}
+	.blog-post-category, .blog-post-tags {
+		* {
+			display: inline;
+		}
+		p:first-of-type:after {
+			content: ":";
+		}
+		a {
+			color: @color-swatch1;
+		}
+		a:after {
+			content: ",";
+		}
+		li:last-of-type a:after {
+			content: "";
+		}
+	}
+	.blog-post-metadata {
+		margin-top: 2.8em;
+		background: lighten(@color-swatch5, 23%);
+		padding: 1em;
+		min-height: 0;
+		> * {
+			display: block;
+			padding-bottom: .6em;
+		}
+	}
+}
+.blog-post-date, .blog-post-date time {
+	font-style: italic;
+	color: @color-swatch5;
+	display: block;
+	border: 0;
+	padding: 0;
+}
+.bloglistposts {
+	text-align: center;
+	.blog-post-item {
+		padding: 2.5em 0 4.5em;
+		width: 80%;
+		margin: 0 auto 2.5em;
+		border-width: 0;
+		border-bottom-width: 1px;
+		border-image: radial-gradient(lighten(@color-swatch5, 10%) 70%, #fff 100%, #fff) 1%;
+		position: relative;
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: -5.5px;
+			left: 49.3%;
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+			width: 2px;
+			height: 2px;
+			background: @color-swatch6;
+			border: 4px double lighten(@color-swatch5, 5%);
+		}
+	}
+}
+a.blog-post-more-link {
+	display: inline-block;
+	margin-bottom: 1em;
+	padding-bottom: 0;
+	box-sizing: border-box;
+	color: @color-swatch1;
+}
+
+/*	===============================
 	Media queries
 	=============================== */
 @media (max-width: 940px) {
@@ -366,6 +463,15 @@ a {
 	.footer {
 		.aside {
 			text-align: center;
+		}
+	}
+	.blogpost {
+		text-align: center;
+		padding-top: 2em;
+		img {
+			float: none;
+			padding-bottom: 2em;
+			padding-left: 0;
 		}
 	}
 }

@@ -25,7 +25,9 @@
 </nav>
 
 <section class="section main default-page">
-	{{zone('main')|raw}}
+	{# {{widget('blogpost', 'blogpost1', {})|raw}} #}
+	{{widget('bloglistposts', 'bloglistposts1', {})|raw}}
+	{# {{zone('main')|raw}} #}
 </section>
 
 <footer class="footer">
