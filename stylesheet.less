@@ -24,7 +24,7 @@
 /*	===============================
 	Style import
 	=============================== */
-.about, .contact, .gallery, .default-page {
+.about-page, .contact-page, .gallery-page, .default-page, .home-page {
 	@import "@{templateCommon}/basekit-bootstrap.less";
 }
 
@@ -45,7 +45,7 @@ body {
 	text-rendering: optimizeLegibility;
 	font-size: 14px;
 }
-.page {
+.page-wrap {
 	max-width: 1200px;
 	margin: 0 auto;
 	background: @color-swatch6;
@@ -184,7 +184,7 @@ h4, .menu-item-price p {
 	padding-right: 1em;
 	font-weight: bold;
 }
-p, .about p, .contact p, .gallery p, .about .p-font, .contact .p-font, .gallery .p-font {
+.main p, .main .p-font {
 	font-family: 'Ubuntu', sans-serif;
 	color: @color-swatch4;
 	line-height: 1.8em;
@@ -221,16 +221,17 @@ a {
 	}
 }
 .nav {
-	padding: 1.7em 0;
 	border-top: 1px solid  @color-swatch5;
 	border-bottom: 1px solid  @color-swatch5;
 	a {
 		color: @color-swatch3;
 		text-decoration: none;
-		margin: 0 1.6em;
 		&:hover {
 			color: @color-swatch3;
 		}
+	}
+	li {
+		margin: 0 1.6em;
 	}
 	.menu-pull {
 		display: none;
@@ -242,12 +243,62 @@ a {
 	li {
 		list-style: none;
 		padding: 0;
-		display: inline;
+		display: inline-block;
 	}
 	.active {
 		color: @color-swatch1;
 		padding-bottom: 0;
 		border-color: @color-swatch1;
+	}
+	li {
+		position: relative;
+		padding: 1.7em 0;
+		ul {
+			display: none;
+			position: absolute;
+			background: @color-swatch6;
+			left: -1em;
+			top: 4.4em;
+			z-index: 1;
+			box-shadow: 0 1px 1px fadeout(@color-swatch3, 50%);
+		}
+		&:hover {
+			ul {
+				display: block;
+			}
+		}
+		li {
+			width: 100px;
+			margin: 0;
+			padding: .6em 1em;
+			display: list-item;
+		}
+	}
+	.pull {
+		display: none;
+	}
+}
+.widget.feature .feature-bgimg {
+	height: 28em;
+	text-align: center;
+	color: @color-swatch6;
+	h3 {
+		font-size: 3em;
+		text-shadow: 0 0 3px fadeout(@color-swatch3, 30%);
+	}
+	button {
+		font-size: 1em;
+		-webkit-appearance: none;
+		border: 0;
+		outline: none;
+		background: @color-swatch1;
+		padding: .8em 1em;
+		border-radius: 3px;
+		color: @color-swatch6;
+		cursor: pointer;
+		&:hover {
+			background: darken(@color-swatch1, 5%);
+		}
 	}
 }
 .menu-header {
@@ -262,7 +313,6 @@ a {
 	font-style: italic;
 	line-height: 1.5em;
 }
-
 .icon {
 	position: relative;
 	display: none;
@@ -296,7 +346,7 @@ a {
 		display: inline-block;
 	}
 }
-.about, .contact, .gallery, .default-page {
+.main {
 	.widget.twitter ul li time {
 		color: @color-swatch5;
 	}
@@ -374,7 +424,7 @@ a {
 		}
 	}
 }
-.blog-post-date, .blog-post-date time {
+.blog-post-metadata time, .blog-post-date time {
 	font-style: italic;
 	color: @color-swatch5;
 	display: block;
