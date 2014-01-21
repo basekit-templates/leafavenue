@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ page.seoLang }}">
+<head>
+	<meta charset="utf-8" />
+	<title>{{ page.title }}</title>
+
+	<meta name="keywords" content="{{ page.keywords }}" />
+	<meta name="description" content="{{ page.description }}" />
+	<meta http-equiv="content-language" content="{{ page.seoLang }}" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:700' rel='stylesheet' type='text/css'>
+
+	{% if site.favicon %}
+		<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
+		<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
+	{% endif %}
+
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	{% include basekit.headScript %}
+</head>
+
+<body class="{{ page.backgroundClass }}">
+	<div class="page">
+		<header class="header">
+			<aside class="aside left">
+				<h2>{{widget('content', 'address-header', {content: '. 23RD AND 4TH SIMMION ST .', lines: 'all'})|raw}}</h2>
+			</aside>
+			<div class="centre">
+				<a href="#" title="Leaf Avenue">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 27 34">
+						<image xlink:href="{{ asset('images/logo.svg') }}" src="{{ asset('images/logo.jpg') }}" width="27" height="34"></image>
+					</svg>
+				</a>
+				<h1>{{widget('companyname', 'companyname', {"business": "Leaf Avenue"})|raw}}</h1>
+			</div>			
+			<aside class="aside right">
+				<h2>{{widget('content', 'hours-header', {content: '. OPEN 11AM TIL LATE DAILY .', lines: 'all'})|raw}}</h2>
+			</aside>
+		</header>
+		<nav class="nav">
+			{{widget('extendednavigation', 'navigationheader', {})|raw}}
+		</nav>
