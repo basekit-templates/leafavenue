@@ -53,7 +53,7 @@ body {
 	box-shadow: 10px 10px 3px fadeout(@color-swatch4, 50%);
 }
 .main {
-	padding: 2em 0;
+	// padding: 2em 0;
 	.menu-items {
 		width: 100%;
 		
@@ -102,7 +102,7 @@ body {
 		float: right;
 		margin-left: 1em;
 		padding: 2px;
-		border: 1px solid  @color-swatch5;
+		border: 1px solid	 @color-swatch5;
 		background: @color-swatch6;
 	}
 }
@@ -223,11 +223,12 @@ a {
 	}
 }
 .nav {
-	border-top: 1px solid  @color-swatch5;
-	border-bottom: 1px solid  @color-swatch5;
+	border-top: 1px solid	lighten(@color-swatch5, 20%);
+	border-bottom: 1px solid  lighten(@color-swatch5, 20%);
 	a {
 		color: @color-swatch3;
 		text-decoration: none;
+		font-size: 12px;
 		&:hover {
 			color: @color-swatch3;
 		}
@@ -278,6 +279,29 @@ a {
 	}
 	.pull {
 		display: none;
+	}
+}
+.menusections {
+	margin: 0;
+	margin: 0;
+	padding: .5em 0;
+	border-bottom: 1px solid lighten(@color-swatch5, 20%);
+}
+
+.about-page, .contact-page, .gallery-page, .default-page, .home-page {
+	.widget.menusections {
+		margin: 0;
+		margin: 0;
+		padding: .5em 0;
+		border-bottom: 1px solid lighten(@color-swatch5, 20%);
+		
+		ul {
+			max-width: none;
+			text-align: center;
+		}
+		a {
+			font-size: 12px;
+		}
 	}
 }
 .widget.feature .feature-bgimg {
@@ -351,6 +375,48 @@ a {
 		display: inline-block;
 	}
 }
+					.menu-section-item-dietary-props {
+							.dietary-icon {
+								position: relative;
+								background: @color-swatch1;
+								color: @color-swatch6;
+								&:after {
+									z-index: -1;
+									color: @color-swatch1;
+									position: absolute;
+									content: "\2741";
+									top: -.2em;
+									left: -0.1em;
+									font-size: 3em;
+									font-weight: bold;
+									z-index: -1;
+									top: -0.4em;
+								}
+								&:before {
+									z-index: 1;
+									top: 0;
+									left: .25em;
+									border-radius: 100%;
+									position: absolute;
+									content: "D";
+									background: @color-swatch6;
+									width: 1.1em;
+									height: 1.1em;
+								}
+							}
+							.hot-icon:before {
+								content: "H";
+							}
+							.vegetarian-icon {
+								content: "V";
+							}
+							.glutenFree-icon {
+								content: "GF";
+							}
+						
+					}
+
+
 .main {
 	.widget.twitter ul li time {
 		color: @color-swatch5;
