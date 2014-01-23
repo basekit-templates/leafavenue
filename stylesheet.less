@@ -380,10 +380,17 @@ a {
 								position: relative;
 								background: @color-swatch1;
 								color: @color-swatch6;
+								width: 25px;
+								height: 25px;
+								display: block;
+								border-radius: 100%;
+								-ms-border-radius: 100%;
+								-moz-border-radius: 100%;
+								-webkit-border-radius: 100%;
 								&:before {
 									z-index: 1;
-									top: 1px;
-									left: 6px;
+									top: 4px;
+									left: 8px;
 									border-radius: 100%;
 									position: absolute;
 									content: "D";
@@ -394,10 +401,10 @@ a {
 							.hot-icon:before {
 								content: "H";
 							}
-							.vegetarian-icon {
+							.vegetarian-icon:before {
 								content: "V";
 							}
-							.glutenFree-icon {
+							.glutenFree-icon:before {
 								content: "GF";
 							}
 						
