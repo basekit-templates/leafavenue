@@ -53,12 +53,12 @@ body {
 	box-shadow: 10px 10px 3px fadeout(@color-swatch4, 50%);
 }
 .main {
-	// padding: 2em 0;
+	padding: 2em 0;
 	.menu-items {
 		width: 100%;
 		
 		list-style: none;
-		padding: 0 0 4em;
+/* 		padding: 0 0 2.5em; */
 		float: left;
 		clear: both;
 		
@@ -278,6 +278,7 @@ a {
 		position: relative;
 		padding: 1.7em 0;
 		ul {
+			text-align: left;
 			display: none;
 			position: absolute;
 			background: @color-swatch6;
@@ -408,6 +409,8 @@ a {
 		-ms-border-radius: 100%;
 		-moz-border-radius: 100%;
 		-webkit-border-radius: 100%;
+		float: left;
+		margin-right: .5em;
 		&:before {
 			z-index: 1;
 			top: 4px;
