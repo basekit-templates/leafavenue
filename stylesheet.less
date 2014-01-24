@@ -30,6 +30,10 @@
 
 	body * {
 		-webkit-backface-visibility: hidden;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 	}
 
 
@@ -79,12 +83,18 @@ body {
 		column-rule-color: lighten(@color-swatch5, 20%);
 		column-rule-style: solid;
 		column-rule-width: 2px;
+		
+		.menu-item {
+			padding: 1px 20px 45px;
+		}
+
 		> * {
 			break-inside: avoid;
 			-webkit-column-break-inside: avoid;
 			-moz-column-break-inside: avoid;
 			-ms-column-break-inside: avoid;
 			-o-column-break-inside: avoid;
+			page-break-inside: avoid;
 		}
 		&.odd {
 			-webkit-column-count: 3;
@@ -177,7 +187,6 @@ body {
 	padding: 4em 0;
 }
 .article, .menu-item {
-	padding: 1px;
 	clear: both;
 	small {
 		color: @color-swatch5;
@@ -185,6 +194,9 @@ body {
 	&.featured, &.menu-item-promoted {
 		background:  @color-swatch2;
 	}
+}
+.menu-section-item-dietary-props {
+	height: 40px;
 }
 
 .clearfix:before,
@@ -219,6 +231,8 @@ h2 {
 h3 {
 	font-size: 1.4em;
 	margin-bottom: .5em;
+	margin-top: 0;
+	padding-top: 1em;
 }
 h4, .main .menu-item-price p {
 	color: @color-swatch1;
@@ -608,6 +622,9 @@ a.blog-post-more-link {
 			-webkit-column-count: 1;
 			-moz-column-count: 1;
 			column-count: 1;
+		}
+		.menu-item {
+			padding: 1px 20px 45px;
 		}
 	}
 	.column, .column:nth-of-type(1) {
