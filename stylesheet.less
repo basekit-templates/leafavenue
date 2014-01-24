@@ -30,6 +30,10 @@
 
 	body * {
 		-webkit-backface-visibility: hidden;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 	}
 
 
@@ -85,6 +89,7 @@ body {
 			-moz-column-break-inside: avoid;
 			-ms-column-break-inside: avoid;
 			-o-column-break-inside: avoid;
+			page-break-inside: avoid;
 		}
 		&.odd {
 			-webkit-column-count: 3;
@@ -172,7 +177,7 @@ body {
 	padding: 4em 0;
 }
 .article, .menu-item {
-	padding: 1px;
+	padding: 1px 20px 45px;
 	clear: both;
 	small {
 		color: @color-swatch5;
