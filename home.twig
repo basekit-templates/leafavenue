@@ -1,37 +1,11 @@
-{% extends "layout.twig" %}
+{% include "header.twig" %}
 
-{% block content %}
-
-<header class="header">
-	<aside class="aside left">
-		<h2>{{widget('content', 'address-header', {content: '. 23RD AND 4TH SIMMION ST .', lines: 'all'})|raw}}</h2>
-	</aside>
-	<div class="centre">
-		<a href="#" title="Leaf Avenue">
-			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 27 34">
-				<image xlink:href="templates/leafavenue/images/logo.svg" src="templates/leafavenue/images/logo.jpg" width="27" height="34"></image>
-			</svg>
-		</a>
-		<h1>{{widget('companyname', 'companyname', {"business": "Leaf Avenue"})|raw}}</h1>
-	</div>			
-	<aside class="aside right">
-		<h2>{{widget('content', 'hours-header', {content: '. OPEN 11AM TIL LATE DAILY .', lines: 'all'})|raw}}</h2>
-	</aside>
-	
-</header>
-
-<nav class="nav">
-	{{widget('menusections', 'menusections1', {})|raw}}
-</nav>
-
-<section class="section main">
-	{{widget('menu', 'menu1', {})|raw}}
+<section class="section home-feature">
+    {{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"Lorem Ipsum","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
 </section>
 
-<footer class="footer">
-	<aside class="aside left">
-		<h2>{{widget('content', 'address-header', {content: '. 23RD AND 4TH SIMMION ST .', lines: 'all'})|raw}}</h2>
-	</aside>
-</footer>
+<section class="section main home-page">
+	{{zone('main')|raw}}
+</section>
 
-{% endblock %}
+{% include "footer.twig" %}

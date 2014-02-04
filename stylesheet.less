@@ -24,15 +24,24 @@
 /*	===============================
 	Style import
 	=============================== */
-.about, .contact, .gallery, .default-page {
+.about-page, .contact-page, .gallery-page, .default-page, .home-page {
 	@import "@{templateCommon}/basekit-bootstrap.less";
 }
+
+	body * {
+		-webkit-backface-visibility: hidden;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
 
 /*	===============================
 	Globals
 	=============================== */
 body {
-	background: @color-swatch1 url("templates/leafavenue/images/bg.png") center top;
+	background: @color-swatch1 image('/images/bg.png') center top;
 	background-size: 100% auto;
 	padding: 2%;
 	font-family: 'Ubuntu', sans-serif;
@@ -40,7 +49,7 @@ body {
 	text-rendering: optimizeLegibility;
 	font-size: 14px;
 }
-.page {
+.page-wrap {
 	max-width: 1200px;
 	margin: 0 auto;
 	background: @color-swatch6;
@@ -50,13 +59,15 @@ body {
 .main {
 	padding: 2em 0;
 	.menu-items {
+		width: 100%;
+		
 		list-style: none;
-		padding: 0 0 4em;
+		padding: 0;
 		float: left;
 		clear: both;
 		
 		-webkit-column-count: 2;
-		-webkit-column-gap: 4em;	
+		-webkit-column-gap: 4em;
 		-webkit-column-rule-color: lighten(@color-swatch5, 20%);
 		-webkit-column-rule-style: solid;
 		-webkit-column-rule-width: 2px;
@@ -72,17 +83,42 @@ body {
 		column-rule-color: lighten(@color-swatch5, 20%);
 		column-rule-style: solid;
 		column-rule-width: 2px;
+		
+		.menu-item {
+			padding: 1px 20px 45px;
+		}
+		li {
+			padding: 1.5em !important;
+		}
+
 		> * {
 			break-inside: avoid;
 			-webkit-column-break-inside: avoid;
 			-moz-column-break-inside: avoid;
 			-ms-column-break-inside: avoid;
 			-o-column-break-inside: avoid;
+			page-break-inside: avoid;
+		}
+		&.odd {
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+			@media (max-width: 500px) {
+				-webkit-column-count: 1;
+                -moz-column-count: 1;
+                column-count: 1;  
+            }
+			&.bk1-columns {
+				-webkit-column-count: 1;
+				-moz-column-count: 1;
+				column-count: 1;
+			}
 		}
 	}
 	.menu-subsection {
 		padding-left: 0;
 		list-style: none;
+		float: left;
 	}
 	.menu-section-header {
 		list-style: none;
@@ -95,16 +131,22 @@ body {
 		float: right;
 		margin-left: 1em;
 		padding: 2px;
-		border: 1px solid  @color-swatch5;
+		border: 1px solid @color-swatch5;
 		background: @color-swatch6;
+		
+		display: none;
+	}
+	.menu-item-image-wrap{
+		width: 100%;
+		height: 200px;
+		background-size: cover;
+		background-position: center center;
+		padding: 2px;
+		border: 1px solid @color-swatch5;
+		box-shadow: inset 0 0 0 2px @color-swatch6;
 	}
 }
 
-.column {
-	width: 47%;
-	float: left;
-	box-sizing: border-box;
-}
 .header, .nav {
 	background: @color-swatch6;
 	text-align: center;
@@ -149,7 +191,6 @@ body {
 	padding: 4em 0;
 }
 .article, .menu-item {
-	padding: .2em 1em 2em;
 	clear: both;
 	small {
 		color: @color-swatch5;
@@ -158,8 +199,27 @@ body {
 		background:  @color-swatch2;
 	}
 }
+
 .menu-subsection {
 	clear: both;
+}
+
+.menu-section-item-dietary-props {
+	height: 40px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
 }
 
 /*	===============================
@@ -180,14 +240,16 @@ h2 {
 h3 {
 	font-size: 1.4em;
 	margin-bottom: .5em;
+	margin-top: 0;
+	padding-top: 1em;
 }
-h4, .menu-item-price p {
+h4, .main .menu-item-price p {
 	color: @color-swatch1;
 	display: inline;
 	padding-right: 1em;
 	font-weight: bold;
 }
-p, .about p, .contact p, .gallery p, .about .p-font, .contact .p-font, .gallery .p-font {
+.main p, .main .p-font {
 	font-family: 'Ubuntu', sans-serif;
 	color: @color-swatch4;
 	line-height: 1.8em;
@@ -214,6 +276,10 @@ a {
 	color: @color-swatch6;
 }
 
+.menu-subsection-name {
+	font-size: 26px;
+}
+
 /*	===============================
 	Design specific
 	=============================== */
@@ -224,16 +290,21 @@ a {
 	}
 }
 .nav {
-	padding: 1.7em 0;
-	border-top: 1px solid  @color-swatch5;
-	border-bottom: 1px solid  @color-swatch5;
+	border-top: 1px solid	lighten(@color-swatch5, 20%);
+	border-bottom: 1px solid  lighten(@color-swatch5, 20%);
 	a {
 		color: @color-swatch3;
 		text-decoration: none;
-		margin: 0 1.6em;
+		font-size: 12px;
 		&:hover {
 			color: @color-swatch3;
 		}
+	}
+	li {
+		margin: 0 1.6em;
+	}
+	.menu-pull {
+		display: none;
 	}
 	ul {
 		padding: 0;
@@ -242,12 +313,86 @@ a {
 	li {
 		list-style: none;
 		padding: 0;
-		display: inline;
+		display: inline-block;
 	}
 	.active {
 		color: @color-swatch1;
 		padding-bottom: 0;
 		border-color: @color-swatch1;
+	}
+	li {
+		position: relative;
+		padding: 1.7em 0;
+		ul {
+			text-align: left;
+			display: none;
+			position: absolute;
+			background: @color-swatch6;
+			left: -1em;
+			top: 4.4em;
+			z-index: 1;
+			box-shadow: 0 1px 1px fadeout(@color-swatch3, 50%);
+		}
+		&:hover {
+			ul {
+				display: block;
+			}
+		}
+		li {
+			width: 100px;
+			margin: 0;
+			padding: .6em 1em;
+			display: list-item;
+		}
+	}
+	.pull {
+		display: none;
+	}
+}
+.menusections {
+	margin: 0;
+	margin: 0;
+	padding: .5em 0;
+	border-bottom: 1px solid lighten(@color-swatch5, 20%);
+}
+
+.about-page, .contact-page, .gallery-page, .default-page, .home-page {
+	.widget.menusections {
+		margin: 0;
+		margin: 0;
+		padding: .5em 0;
+		border-bottom: 1px solid lighten(@color-swatch5, 20%);
+		
+		ul {
+			max-width: none;
+			text-align: center;
+		}
+		a {
+			font-size: 12px;
+		}
+	}
+}
+.widget.feature .feature-bgimg {
+	height: 28em;
+	text-align: center;
+	color: @color-swatch6;
+	h3 {
+		font-size: 3em;
+		text-shadow: 0 0 3px fadeout(@color-swatch3, 30%);
+	}
+	button {
+		font-size: 1em;
+		-webkit-appearance: none;
+		border: 0;
+		outline: none;
+		background: @color-swatch1;
+		padding: .8em 1em;
+		border-radius: 3px;
+		color: @color-swatch6;
+		cursor: pointer;
+		&:hover {
+			background: darken(@color-swatch1, 5%);
+		}
 	}
 }
 .menu-header {
@@ -262,8 +407,7 @@ a {
 	font-style: italic;
 	line-height: 1.5em;
 }
-
-.icon {
+.menu-item .icon {
 	position: relative;
 	display: none;
 	text-align: center;
@@ -285,18 +429,110 @@ a {
 		z-index: -1;
 		color: @color-swatch1;
 		position: absolute;
-		content: "&#149;";
+		content: "\2741";
 		top: -.2em;
-		left: 0;
-		font-size: 2em;
+		left: -0.1em;
+		font-size: 3em;
+		font-weight: bold;
+		z-index: -1;
+		top: -0.4em;
 	}
+}
+.menu-info {
+	clear: both;
 }
 .alt {
 	.icon {
 		display: inline-block;
 	}
 }
-.about, .contact, .gallery, .default-page {
+.menu-section-item-dietary-props {
+	.dietary-icon {
+		position: relative;
+		background: @color-swatch1 !important;
+		color: @color-swatch6;
+		width: 25px;
+		height: 25px;
+		display: block;
+		border-radius: 100%;
+		-ms-border-radius: 100%;
+		-moz-border-radius: 100%;
+		-webkit-border-radius: 100%;
+		float: left;
+		margin-right: .5em;
+		&:before {
+			z-index: 1;
+			top: 4px;
+			left: 8px;
+			border-radius: 100%;
+			content: "D";
+			width: 1.1em;
+			height: 1.1em;
+			position: absolute;
+			font-size: 10px;
+			text-align: center;
+			width: 100%;
+			left: 0;
+			top: 0;
+			line-height: 27px;
+		}
+	}
+	.hot-icon:before {
+		content: "H" !important;
+	}
+	.vegetarian-icon:before {
+		content: "V" !important;
+	}
+	.glutenFree-icon:before {
+		content: "GF" !important;
+	}
+	.vegetarian-icon {
+		&:before { 
+			content: "VG" !important;
+		}
+	}
+	.vegan-icon {
+		&:before { 
+			content: "VE" !important;
+		}
+	}
+	.glutenfree-icon {
+		&:before { 
+			content: "gf" !important;
+		}
+	}
+	.nutfree-icon {
+		&:before { 
+			content: "NF" !important;
+		}
+	}
+	.dairyfree-icon {
+		&:before { 
+			content: "DF" !important;
+		}
+	}
+	.medium-spicy-icon {
+		&:before { 
+			content: "MD" !important;
+		}
+	}
+	.hot-icon {
+		&:before { 
+			content: "HT" !important;
+		}
+	}
+	.spicy-icon {
+		&:before { 
+			content: "MI" !important;
+		}
+	}
+	.not-spicy-icon, .not-spicy-icon:before {
+		display: none !important;
+	}
+}
+
+
+.main {
 	.widget.twitter ul li time {
 		color: @color-swatch5;
 	}
@@ -327,6 +563,97 @@ a {
 }
 
 /*	===============================
+	Blog styles
+	=============================== */
+.blogpost, .bloglistposts {
+	padding: 2.5em 0 4.5em;
+	h2 {
+		font-size: 2.5em;
+		padding-bottom: .6em;
+		a {
+			font-size: inherit;
+		}
+	}
+	p {
+		color: @color-swatch4;
+		font-size: 1.1em;
+	}
+	img {
+		float: right;
+		max-width:100%;
+		padding-left: 2em;
+	}
+	.blog-post-category, .blog-post-tags {
+		* {
+			display: inline;
+		}
+		p:first-of-type:after {
+			content: ":";
+		}
+		a {
+			color: @color-swatch1;
+		}
+		a:after {
+			content: ",";
+		}
+		li:last-of-type a:after {
+			content: "";
+		}
+	}
+	.blog-post-metadata {
+		margin-top: 2.8em;
+		background: lighten(@color-swatch5, 23%);
+		padding: 1em;
+		min-height: 0;
+		> * {
+			display: block;
+			padding-bottom: .6em;
+		}
+	}
+}
+.blog-post-metadata time, .blog-post-date time {
+	font-style: italic;
+	color: @color-swatch5;
+	display: block;
+	border: 0;
+	padding: 0;
+}
+.bloglistposts {
+	text-align: center;
+	.blog-post-item {
+		padding: 2.5em 0 4.5em;
+		width: 80%;
+		margin: 0 auto 2.5em;
+		border-width: 0;
+		border-bottom-width: 1px;
+		border-image: radial-gradient(lighten(@color-swatch5, 10%) 70%, #fff 100%, #fff) 1%;
+		position: relative;
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: -5.5px;
+			left: 49.3%;
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+			width: 2px;
+			height: 2px;
+			background: @color-swatch6;
+			border: 4px double lighten(@color-swatch5, 5%);
+		}
+	}
+}
+a.blog-post-more-link {
+	display: inline-block;
+	margin-bottom: 1em;
+	padding-bottom: 0;
+	box-sizing: border-box;
+	color: @color-swatch1;
+}
+
+/*	===============================
 	Media queries
 	=============================== */
 @media (max-width: 940px) {
@@ -353,10 +680,13 @@ a {
 	}
 	.main {
 		padding: 0 0 1em;
-		.menu-items {
+		.menu-items, .menu-items.odd, .menu-items.even {
 			-webkit-column-count: 1;
 			-moz-column-count: 1;
 			column-count: 1;
+		}
+		.menu-item {
+			padding: 1px 20px 45px;
 		}
 	}
 	.column, .column:nth-of-type(1) {
@@ -369,6 +699,15 @@ a {
 	.footer {
 		.aside {
 			text-align: center;
+		}
+	}
+	.blogpost {
+		text-align: center;
+		padding-top: 2em;
+		img {
+			float: none;
+			padding-bottom: 2em;
+			padding-left: 0;
 		}
 	}
 }
