@@ -60,10 +60,8 @@ body {
 	background: @color-swatch1 image('/images/bg.png') center top;
 	background-size: 100% auto;
 	padding: 2%;
-	font-family: 'Ubuntu', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
-	font-size: 14px;
 }
 .page-wrap {
 	max-width: 1200px;
@@ -303,12 +301,13 @@ h6 {
 	font-size: @font-swatch9-font-size;
 }
 a {
-	color: @color-swatch1;
 	text-decoration: none;
+}
+.main a {
+	color: @color-swatch1;
 	transition: .2s;
 	padding-bottom: .3em;
 	border-bottom: 1px solid transparent;
-	text-decoration: none !important;
 
 	font-family:@font-swatch8-font-family; 
 	font-weight: @font-swatch8-font-weight; 
