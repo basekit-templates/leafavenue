@@ -60,26 +60,26 @@
        "title": "Futura",
         "font1": {
             "font-family": "\"Futura\", \"Helvetica\", sans-serif",
-            "font-size": "24px",
+            "font-size": "35px",
             "font-weight": "400",
-            "line-height": "34px",
+            "line-height": "38px",
             "color": "@color-swatch6",
             "letter-spacing": "inherit"
         },
         "font2": {
             "font-family": "\"Futura\", \"Helvetica\", sans-serif",
-            "font-size": "24px",
+            "font-size": "16px",
             "font-weight": "400",
-            "line-height": "34px",
+            "line-height": "26px",
             "color": "@color-swatch3",
             "letter-spacing": "inherit"
         },
         "font3": {
             "font-family": "\"Futura\", \"Helvetica\", sans-serif",
-            "font-size": "18px",
+            "font-size": "20px",
             "font-weight": "400",
             "line-height": "28px",
-            "color": "@color-swatch3",
+            "color": "@color-swatch6",
             "letter-spacing": "inherit"
         },
         "font4": {
@@ -111,10 +111,10 @@
         },
         "font7": {
             "font-family": "\"Futura\", \"Helvetica\", sans-serif",
-            "font-size": "18px",
+            "font-size": "14px",
             "font-weight": "400",
-            "line-height": "28px",
-            "color": "@color-swatch5",
+            "line-height": "24px",
+            "color": "lighten(@color-swatch4, 10%)",
             "letter-spacing": "inherit",
             "background-color": "transparent",
             "background-color-hover": "darken(@color-swatch1,5%)"
@@ -128,11 +128,11 @@
             "letter-spacing": "inherit"
         },
         "font9": {
-            "font-family": "\"Futura\", \"Helvetica\", sans-serif",
-            "font-size": "18px",
+            "font-family": "\"Ubuntu\", \"Helvetica\", sans-serif",
+            "font-size": "14px",
             "font-weight": "400",
-            "line-height": "28px",
-            "color": "@color-swatch5",
+            "line-height": "24px",
+            "color": "lighten(@color-swatch4, 10%)",
             "letter-spacing": "inherit"
         },
         "font10": {
