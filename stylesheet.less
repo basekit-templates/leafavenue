@@ -21,6 +21,22 @@
 	===============================
 */
 
+/*
+	Font Swatches:
+	===============================
+	@font-swatch1: Heading 1
+	@font-swatch2: Heading 2
+	@font-swatch3: Heading 3
+	@font-swatch4: Heading 4
+	@font-swatch5: Heading 5
+	@font-swatch6: Heading 6
+	@font-swatch7: Buttons
+	@font-swatch8: Anchor tags
+	@font-swatch9: Paragraph
+	===============================
+*/
+
+
 /*	===============================
 	Style import
 	=============================== */
@@ -225,35 +241,66 @@ body {
 /*	===============================
 	Type
 	=============================== */
+/*
 h1, h2, h3, .nav {
 	font-family: 'Josefin Sans', sans-serif;
 }
+*/
 h1 {
-	font-size: 2.5em;
-	font-weight: bold;
+	font-family:@font-swatch1-font-family; 
+	font-weight: @font-swatch1-font-weight; 
+	color:@font-swatch1-color; 
+	line-height:@font-swatch1-line-height; 
+	letter-spacing: @font-swatch1-letter-spacing; 
+	font-size: @font-swatch1-font-size;
 }
-h2 {
-	color: @color-swatch3;
-	font-size: 1.2em;
-	font-weight: 700;
+h2 {	
+	font-family:@font-swatch2-font-family; 
+	font-weight: @font-swatch2-font-weight; 
+	color:@font-swatch2-color; 
+	line-height:@font-swatch2-line-height; 
+	letter-spacing: @font-swatch2-letter-spacing; 
+	font-size: @font-swatch2-font-size;
 }
 h3 {
-	font-size: 1.4em;
-	margin-bottom: .5em;
-	margin-top: 0;
-	padding-top: 1em;
+	font-family:@font-swatch3-font-family; 
+	font-weight: @font-swatch3-font-weight; 
+	color:@font-swatch3-color; 
+	line-height:@font-swatch3-line-height; 
+	letter-spacing: @font-swatch3-letter-spacing; 
+	font-size: @font-swatch3-font-size;
 }
 h4, .main .menu-item-price p {
-	color: @color-swatch1;
-	display: inline;
-	padding-right: 1em;
-	font-weight: bold;
+	font-family:@font-swatch4-font-family; 
+	font-weight: @font-swatch4-font-weight; 
+	color:@font-swatch4-color; 
+	line-height:@font-swatch4-line-height; 
+	letter-spacing: @font-swatch4-letter-spacing; 
+	font-size: @font-swatch4-font-size;
 }
-.main p, .main .p-font {
-	font-family: 'Ubuntu', sans-serif;
-	color: @color-swatch4;
-	line-height: 1.8em;
-	margin-top: .6em;
+h5 {
+	font-family:@font-swatch5-font-family; 
+	font-weight: @font-swatch5-font-weight; 
+	color:@font-swatch5-color; 
+	line-height:@font-swatch5-line-height; 
+	letter-spacing: @font-swatch5-letter-spacing; 
+	font-size: @font-swatch5-font-size;
+}
+h6 {
+	font-family:@font-swatch6-font-family; 
+	font-weight: @font-swatch6-font-weight; 
+	color:@font-swatch6-color; 
+	line-height:@font-swatch6-line-height; 
+	letter-spacing: @font-swatch6-letter-spacing; 
+	font-size: @font-swatch6-font-size;
+}
+.main p, .main .p-font {	
+	font-family:@font-swatch9-font-family; 
+	font-weight: @font-swatch9-font-weight; 
+	color:@font-swatch9-color; 
+	line-height:@font-swatch9-line-height; 
+	letter-spacing: @font-swatch9-letter-spacing; 
+	font-size: @font-swatch9-font-size;
 }
 a {
 	color: @color-swatch1;
@@ -262,6 +309,13 @@ a {
 	padding-bottom: .3em;
 	border-bottom: 1px solid transparent;
 	text-decoration: none !important;
+
+	font-family:@font-swatch8-font-family; 
+	font-weight: @font-swatch8-font-weight; 
+	color:@font-swatch8-color; 
+	line-height:@font-swatch8-line-height; 
+	letter-spacing: @font-swatch8-letter-spacing; 
+	font-size: @font-swatch8-font-size;
 	&:hover {
 		padding-bottom: 0;
 		border-color: @color-swatch1;
@@ -292,10 +346,11 @@ a {
 .nav {
 	border-top: 1px solid	lighten(@color-swatch5, 20%);
 	border-bottom: 1px solid  lighten(@color-swatch5, 20%);
-	a {
+	a, .text {
 		color: @color-swatch3;
 		text-decoration: none;
-		font-size: 12px;
+		font-size: @font-swatch9-font-size;
+		font-family: @font-swatch8-font-family;
 		&:hover {
 			color: @color-swatch3;
 		}
@@ -368,7 +423,7 @@ a {
 			text-align: center;
 		}
 		a {
-			font-size: 12px;
+			font-size: @font-swatch9-font-size;
 		}
 	}
 }
@@ -381,7 +436,7 @@ a {
 		text-shadow: 0 0 3px fadeout(@color-swatch3, 30%);
 	}
 	button {
-		font-size: 1em;
+		//font-size: 1em;
 		-webkit-appearance: none;
 		border: 0;
 		outline: none;
@@ -390,6 +445,8 @@ a {
 		border-radius: 3px;
 		color: @color-swatch6;
 		cursor: pointer;
+		border-radius: 0;
+		font-weight: @font-swatch9-font-weight;
 		&:hover {
 			background: darken(@color-swatch1, 5%);
 		}
@@ -399,13 +456,7 @@ a {
 	text-align: center;
 }
 .menu-item-nutritional-prop {
-	font-size: 1em;
 	color: @color-swatch5;
-}
-.menu-item-nutritional-prop, .menu-item-nutritional-title {
-	font-size: 0.8em;
-	font-style: italic;
-	line-height: 1.5em;
 }
 .menu-item .icon {
 	position: relative;
@@ -568,7 +619,7 @@ a {
 .blogpost, .bloglistposts {
 	padding: 2.5em 0 4.5em;
 	h2 {
-		font-size: 2.5em;
+		font-size: @font-swatch1-font-size;
 		padding-bottom: .6em;
 		a {
 			font-size: inherit;
@@ -576,12 +627,14 @@ a {
 	}
 	p {
 		color: @color-swatch4;
-		font-size: 1.1em;
+	}
+	.blog-post-feature-image-wrap {
+		background-repeat: no-repeat;
+		background-position: center center;
 	}
 	img {
-		float: right;
 		max-width:100%;
-		padding-left: 2em;
+		padding-bottom: 2em;
 	}
 	.blog-post-category, .blog-post-tags {
 		* {
@@ -611,8 +664,16 @@ a {
 		}
 	}
 }
+.blogpost {
+	.blog-post-feature-image-wrap {
+		float: right;
+		background-position: right top;
+		img {
+			padding: 0 0 2em 2em;
+		}
+	}
+}
 .blog-post-metadata time, .blog-post-date time {
-	font-style: italic;
 	color: @color-swatch5;
 	display: block;
 	border: 0;
