@@ -151,6 +151,7 @@ body {
 	.menu-item-image-wrap{
 		width: 100%;
 		height: 200px;
+		margin-bottom: 10px;
 		background-size: cover;
 		background-position: center center;
 		padding: 2px;
@@ -217,7 +218,7 @@ body {
 }
 
 .menu-section-item-dietary-props {
-	height: 40px;
+	display: inline-block;
 }
 
 .clearfix:before,
@@ -504,83 +505,11 @@ a,
 		position: relative;
 		background: @color-swatch1 !important;
 		color: @color-swatch6;
-		width: 25px;
-		height: 25px;
 		display: block;
-		border-radius: 100%;
-		-ms-border-radius: 100%;
-		-moz-border-radius: 100%;
-		-webkit-border-radius: 100%;
+		border-radius: 2px;
 		float: left;
+		padding: 2px 8px;
 		margin-right: .5em;
-		&:before {
-			z-index: 1;
-			top: 4px;
-			left: 8px;
-			border-radius: 100%;
-			content: "D";
-			width: 1.1em;
-			height: 1.1em;
-			position: absolute;
-			font-size: 10px;
-			text-align: center;
-			width: 100%;
-			left: 0;
-			top: 0;
-			line-height: 27px;
-		}
-	}
-	.hot-icon:before {
-		content: "H" !important;
-	}
-	.vegetarian-icon:before {
-		content: "V" !important;
-	}
-	.glutenFree-icon:before {
-		content: "GF" !important;
-	}
-	.vegetarian-icon {
-		&:before { 
-			content: "VG" !important;
-		}
-	}
-	.vegan-icon {
-		&:before { 
-			content: "VE" !important;
-		}
-	}
-	.glutenfree-icon {
-		&:before { 
-			content: "gf" !important;
-		}
-	}
-	.nutfree-icon {
-		&:before { 
-			content: "NF" !important;
-		}
-	}
-	.dairyfree-icon {
-		&:before { 
-			content: "DF" !important;
-		}
-	}
-	.medium-spicy-icon {
-		&:before { 
-			content: "MD" !important;
-		}
-	}
-	.hot-icon {
-		&:before { 
-			content: "HT" !important;
-		}
-	}
-	.spicy-icon {
-		&:before { 
-			content: "MI" !important;
-		}
-	}
-	.not-spicy-icon, .not-spicy-icon:before {
-		display: none !important;
 	}
 }
 
@@ -632,7 +561,7 @@ a,
 	}
 	.blog-post-feature-image-wrap {
 		background-repeat: no-repeat;
-		background-position: center center;
+		background-position: center;
 	}
 	img {
 		max-width:100%;
@@ -669,7 +598,6 @@ a,
 .blogpost {
 	.blog-post-feature-image-wrap {
 		float: right;
-		background-position: right top;
 		img {
 			padding: 0 0 2em 2em;
 		}
@@ -903,11 +831,19 @@ input[type=search] {
 		display: none;
 	}
 }
+.about-page .widget.responsiveslideshow .slideshow-widget .btn-play,
+.contact-page .widget.responsiveslideshow .slideshow-widget .btn-play, 
+gallery-page .widget.responsiveslideshow .slideshow-widget .btn-play,
+.default-page .widget.responsiveslideshow .slideshow-widget .btn-play,
+.home-page .widget.responsiveslideshow .slideshow-widget .btn-play,
 .widget.responsiveslideshow .slideshow-widget .btn-play {
 	background: image('/images/slideshow-play.png') center no-repeat !important;
 	background-size: 100%;
 	font-size: 0;
 	text-indent: -99999px;
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
 	&:after {
 		display: none;
 	}
@@ -944,6 +880,26 @@ input[type="search"]::-webkit-search-decoration {
 	display: none;
 }
 
+.menu-item {
+	column-break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	-ms-column-break-inside: avoid;
+	-o-column-break-inside: avoid;
+	h3 {
+		color: @color-swatch3;
+	}
+}
+
+.about-page .menu .menu-subsection,
+.contact-page .menu .menu-subsection,
+.gallery-page .menu .menu-subsection,
+.default-page .menu .menu-subsection,
+.home-page .menu .menu-subsection {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 /*	===============================
 	Media queries
 	=============================== */
@@ -978,6 +934,7 @@ input[type="search"]::-webkit-search-decoration {
 		}
 		.menu-item {
 			padding: 1px 20px 45px;
+			
 		}
 	}
 	.column, .column:nth-of-type(1) {
