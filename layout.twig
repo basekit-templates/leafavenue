@@ -28,7 +28,6 @@
 
 	<body class="{{ page.backgroundClass }}">
 
-		{% include basekit.bodyScript %}
 
 		<div class="page-wrap">
 		
@@ -49,6 +48,8 @@
 				if (supportsSVG()) document.documentElement.className += ' svg'
 			}()
 		</script>
+
+		{% include basekit.bodyScript %}
 
 	</body>
 </html>
