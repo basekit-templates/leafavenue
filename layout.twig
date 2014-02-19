@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ page.seoLang }}">
+
+	{% include "head.twig" %}
+	
+	<body class="{{ page.backgroundClass }}">
+	
+		<div class="page-wrap">
+		
+			{% include "header.twig" %}
+
+			{% block content %}
+			{% endblock %}
+		
+			{% include "footer.twig" %}
+			
+		</div>
+		
+		{% include basekit.bodyScript %}
+		
+	</body>
+</html>

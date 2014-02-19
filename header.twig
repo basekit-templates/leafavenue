@@ -1,61 +1,15 @@
-<!doctype html>
-<html lang="{{ page.seoLang }}">
-<head>
-	<meta charset="utf-8" />
-	<title>{{ page.title }}</title>
-
-	<meta name="keywords" content="{{ page.keywords }}" />
-	<meta name="description" content="{{ page.description }}" />
-	<meta http-equiv="content-language" content="{{ page.seoLang }}" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:700' rel='stylesheet' type='text/css'>
-
-	{% if site.favicon %}
-		<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
-		<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
-	{% endif %}
-
-	<!--[if IE]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	
-	{% include basekit.headScript %}
-	
-	<script type="text/javascript">
-		$(function() {
-			$('a[href*=#]:not([href=#])').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-					var target = $(this.hash);
-					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-					if (target.length) {
-						$('html,body').animate({
-							scrollTop: target.offset().top
-						}, 1000);
-						return false;
-					}
-				}
-			});
-		});
-	</script>
-</head>
-
-<body class="{{ page.backgroundClass }}">
-	<div class="page-wrap">
-		<header class="header">
-			<aside class="aside left">
-				<h2>{{widget('content', 'address-header', {content: '<span>. 23RD AND 4TH SIMMION ST .</span>', lines: 'all'})|raw}}</h2>
-			</aside>
-			<div class="centre">
-				{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.svg')})|raw}}
-				<h1>{{widget('companyname', 'companyname', {"business": "Leaf Avenue"})|raw}}</h1>
-			</div>			
-			<aside class="aside right">
-				<h2>{{widget('content', 'hours-header', {content: '<span>. OPEN 11AM TIL LATE DAILY .</span>', lines: 'all'})|raw}}</h2>
-			</aside>
-		</header>
-		<nav class="nav">
-			{{widget('extendednavigation', 'navigationheader', {})|raw}}
-		</nav>
+<header class="header">
+	<aside class="aside left">
+		<h2>{{widget('content', 'address-header', {content: '<span>. 23RD AND 4TH SIMMION ST .</span>', lines: 'all'})|raw}}</h2>
+	</aside>
+	<div class="centre">
+		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.svg')})|raw}}
+		<h1>{{widget('companyname', 'companyname', {"business": "Leaf Avenue"})|raw}}</h1>
+	</div>			
+	<aside class="aside right">
+		<h2>{{widget('content', 'hours-header', {content: '<span>. OPEN 11AM TIL LATE DAILY .</span>', lines: 'all'})|raw}}</h2>
+	</aside>
+</header>
+<nav class="nav">
+	{{widget('extendednavigation', 'navigationheader', {})|raw}}
+</nav>

@@ -1,7 +1,8 @@
-{% include "header.twig" %}
+{% extends "layout.twig" %}
+{% block content %}
 
 <section class="section main bloglist-page">
 	{{widget('bloglistposts', 'bloglistposts1', {})|raw}}
 </section>
 
-{% include "footer.twig" %}
+{% endblock %}
