@@ -50,13 +50,16 @@ h1 {
 	letter-spacing: @font-swatch1-letter-spacing; 
 	font-size: @font-swatch1-font-size;
 }
-h2 {
+h2, h2 > div > span {
 	font-family:@font-swatch2-font-family; 
 	font-weight: @font-swatch2-font-weight; 
 	color:@font-swatch2-color; 
 	line-height:@font-swatch2-line-height; 
 	letter-spacing: @font-swatch2-letter-spacing; 
 	font-size: @font-swatch2-font-size;
+}
+h2 > div > span {
+	font-size: bkscale(@font-swatch2-font-size, 0.9);
 }
 h3 {
 	font-family:@font-swatch3-font-family; 
@@ -439,7 +442,7 @@ body {
 	}
 }
 .header, .footer {
-	h2, .content {
+	h2, .content, h2 > div {
 		padding-top: 2.3em;
 		color: @color-swatch5;
 	}
@@ -837,7 +840,7 @@ a.blog-post-more-link, .blog-list-footer a {
 		}
 	}
 	.main {
-		padding: 0 0 1em;
+		padding: 20px 0 20px;
 		.menu-items, .menu-items.odd, .menu-items.even {
 			-webkit-column-count: 1;
 			-moz-column-count: 1;
