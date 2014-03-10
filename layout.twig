@@ -28,8 +28,6 @@
 
 	<body class="{{ page.backgroundClass }}">
 
-		{% include basekit.bodyScript %}
-
 		<div class="page-wrap">
 		
 			{% include "header.twig" %}
@@ -40,6 +38,8 @@
 			{% include "footer.twig" %}
 
 		</div>
+		
+		{% include basekit.bodyScript %}
 		
 		<script type="text/javascript">
 			!function() {
