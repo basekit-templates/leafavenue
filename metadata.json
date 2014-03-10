@@ -2,7 +2,6 @@
 	"name":"Leaf Avenue",
 	"thumbnail":"leafavenue.png",
 	"screenshot":"leafavenue.png",
-    "pageTypes":["menu"],
     "tags": {
     "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "media", "sans-serif"],
     "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion", "sans-serif"],
@@ -65,7 +64,6 @@
             "line-height": "52px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
-            
         },
         "font2": {
             "font-family": "\"Futura\", \"Helvetica\", sans-serif",
