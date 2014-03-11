@@ -264,26 +264,31 @@ input[type="search"]::-webkit-search-decoration {
 	BUTTONS
 */
 
+.contactform button.btn,
 button.btn,
 .widget.profile form button,
-.signupform fieldset button,
-.blog-search-submit-button,
-.widget.feature .feature-bgimg .content button.btn,
-.contactform button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.tweet a,
 .widget.dropbox button,
+.clicktocall a,
+.signupform fieldset button,
+.blog-search-form button,
+.widget.socialicons span a,
 .widget.profile .bk-profile-socialicons span a,
-.widget.socialicons span a {
-	background-color: @color-swatch2;
-	border: none;
+.template-footer .widget.profile .bk-profile-socialicons span a {
+	-webkit-font-smoothing: inherit;
+	color: @font-swatch7-color;
+	background-color: @font-swatch7-background-color;
+	line-height: @font-swatch7-line-height;
+	font-size: @font-swatch7-font-size;
+	font-family: @font-swatch7-font-family;
+	cursor: pointer;
 	-webkit-transition: background-color .2s;
 	-moz-transition: background-color .2s;
 	-ms-transition: background-color .2s;
 	transition: background-color .2s;
 	&:hover {
-		background-color: darken(@color-swatch2, 10%);
-		border: none;
+		background-color: @font-swatch7-background-color-hover;
 	}
 }
 
