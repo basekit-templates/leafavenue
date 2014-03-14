@@ -479,11 +479,23 @@ body {
 	}
 }
 .menu-item-promoted, .main .menu-subsection {
-	background:  lighten(@color-swatch2, 50%);
+	background: lighten(@color-swatch2, 52%);
 }
 
-.menu-subsection {
+.menu-subsection-promoted {
+	background:  lighten(@color-swatch2, 47%);
+}
+
+.menu-subsection-promoted h2, .menu-subsection-promoted h3 {
+	color: @color-swatch2;
+}
+
+.menu .menu-subsection {
 	clear: both;
+	padding: 0;
+	.menu-subsection-wrapper {
+		padding: 4%;
+	}
 }
 .menu-description {
 	margin-bottom: 10px;
@@ -886,3 +898,39 @@ a.blog-post-more-link, .blog-list-footer a {
 	}
 }
 
+/* ===============================
+   PRINT STYLES 
+   =============================== */
+.print-mixin {
+	.widget.menu,
+	.widget.menu:before,
+	.widget.menu .main .menu-items li .inner-item,
+	.widget.menu .main .menu-items li .inner-item .menu-section-item-dietary-props .dietary-icon {
+		border: none !important;
+	}
+	.widget.menu .main .menu-items {
+		-webkit-column-rule-style: solid;
+		-moz-column-rule-style: solid;
+		column-rule-style: solid;
+	}
+	.widget.menu .main .menu-items li.menu-item-promoted:after {
+		color: #b9b9b9;
+	}
+	.widget.menu .main .menu-subsection .menu-subsection-promoted .menu-subsection-header h2:before,
+	.widget.menu .main .menu-subsection .menu-subsection-promoted .menu-subsection-header h2:after,
+	.widget.menu .main .menu-header h2:before,
+	.widget.menu .main .menu-subsection-header h2:before,
+	.widget.menu .main .menu-header h2:after,
+	.widget.menu .main .menu-subsection-header h2:after,
+	.widget.menu .main .menu-subsection .menu-subsection-promoted .menu-subsection-header h2:after {
+		display: none;
+	}
+}
+ 
+@media print {
+    .print-mixin;
+}
+ 
+.bk-print {
+	.print-mixin;
+}
